@@ -1,0 +1,31 @@
+@import "./../../../assets/scss/globals.scss";
+
+.icon {
+  width: 100px;
+  height: auto;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-image: url("./../../../assets/images/toronto.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: $white;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+.celsius {
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.weather-info > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

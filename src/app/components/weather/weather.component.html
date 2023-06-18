@@ -1,1 +1,10 @@
-<p>weather works!</p>
+<div *ngIf="weather" class="weather-info">
+  <div>
+    <img class="icon" [src]="weatherIcon" alt="Weather icon" />
+  </div>
+  <div class="celsius">
+    <strong>{{ weather.main.temp | celsius }}</strong>
+    <p>Feels like {{ weather.main.feels_like | celsius }}</p>
+    <strong>{{ weather.name }}</strong>
+  </div>
+</div>
