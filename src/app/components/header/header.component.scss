@@ -1,13 +1,13 @@
-@import "./../../../assets/scss/globals.scss";
+@import "./../../../styles.scss";
 
 .header {
   background-color: $white;
   display: flex;
   justify-content: center;
   padding: 1.25rem 0;
-  gap: 4rem;
+  align-items: center;
 }
 
 .header img {
-  height: 9rem; /* cada 1rem tem 16px; */
+  height: 9rem;
 }
