@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HeaderComponent } from './header.component';
-import { WeatherModule } from '../weather/weather.module';
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [CommonModule, WeatherModule],
+  imports: [CommonModule],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}
