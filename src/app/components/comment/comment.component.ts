@@ -10,7 +10,7 @@ import { CommentService } from 'src/app/services/comment.service';
 export class CommentComponent implements OnInit {
   @Input() employeeId!: number;
 
-  comments!: Comment[];
+  comments: Comment[] = [];
 
   constructor(private _commentService: CommentService) {}
 

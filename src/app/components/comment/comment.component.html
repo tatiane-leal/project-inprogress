@@ -1,20 +1,26 @@
-<div *ngFor="let comment of comments" class="comment">
-  <app-avatar [avatarUrl]="comment.photo"></app-avatar>
+<ng-container *ngIf="comments.length > 0; else noComments">
+  <div *ngFor="let comment of comments" class="comment">
+    <app-avatar [avatarUrl]="comment.photo"></app-avatar>
 
-  <div class="commentBox">
-    <div class="commentContent">
-      <header>
-        <div class="authorAndTime">
-          <strong>{{ comment.username }}</strong>
+    <div class="commentBox">
+      <div class="commentContent">
+        <header>
+          <div class="authorAndTime">
+            <strong>{{ comment.username }}</strong>
 
-          <span>
-            {{ comment.createdAt | date }}
-          </span>
-        </div>
+            <span>
+              {{ comment.createdAt | date }}
+            </span>
+          </div>
 
-        <button title="Delete comment"></button>
-      </header>
-      <p>{{ comment.message }}</p>
+          <button title="Delete comment"></button>
+        </header>
+        <p>{{ comment.message }}</p>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #noComments>
+  <p>New messages will show up here</p>
+</ng-template>
