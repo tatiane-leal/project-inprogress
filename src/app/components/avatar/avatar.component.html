@@ -1,6 +1,6 @@
 <div>
   <img
     [ngClass]="hasBorder ? 'avatarWithBorder' : 'avatar'"
-    [src]="avatarUrl"
+    [src]="avatarUrl || './../../../assets/images/logo.svg'"
   />
 </div>

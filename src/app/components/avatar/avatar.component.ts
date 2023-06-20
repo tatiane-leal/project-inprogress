@@ -7,6 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class AvatarComponent {
   @Input() hasBorder: boolean = false;
-
-  avatarUrl = 'https://github.com/tatiane-leal.png';
+  @Input() avatarUrl!: string;
 }
