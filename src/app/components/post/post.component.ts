@@ -23,5 +23,6 @@ export class PostComponent implements OnInit {
 
   onSubmit() {
     const message = this.postForm.value.message;
+    console.log('onSubmit>', message);
   }
 }
