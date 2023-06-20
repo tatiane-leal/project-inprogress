@@ -10,37 +10,6 @@
   margin-top: 2rem;
 }
 
-.content {
-  line-height: 1.6;
-  color: red;
-  margin-top: 1.5rem;
-}
-
-.content p {
-  margin-top: 1rem;
-}
-
-.content a {
-  font-weight: bold;
-  color: red;
-  text-decoration: none;
-}
-
-.content a:hover {
-  color: red;
-}
-
-.postHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.postHeader time {
-  font-size: 0.875rem;
-  color: $gray-300;
-}
-
 .author {
   display: flex;
   align-items: center;
@@ -65,9 +34,6 @@
 
 .commentForm {
   width: 100%;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid $gray-300;
 }
 
 .commentForm > strong {
@@ -85,23 +51,7 @@
   border-radius: 8px;
   color: $gray-900;
   line-height: 1.4;
-  margin-top: 1rem;
-}
-
-.commentForm button[type="submit"] {
-  padding: 1rem 1.5rem;
-  margin-top: 1rem;
-  border-radius: 8px;
-  border: 0;
-  background-color: $brand-500;
-  color: $white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.1s;
-}
-
-.commentForm button[type="submit"]:hover {
-  background-color: $brand-300;
+  margin: 1rem 0;
 }
 
 .commentForm footer {

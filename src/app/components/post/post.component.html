@@ -1,51 +1,23 @@
 <article class="post">
-  <header class="postHeader">
-    <div class="author">
-      <app-avatar></app-avatar>
+  <form class="commentForm" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <strong>Leave a birthday message</strong>
 
-      <div class="authorInfo">
-        <strong>Tatiane Sala</strong>
-        <span>Front End Developer</span>
-      </div>
-    </div>
+    <textarea
+      formControlName="message"
+      placeholder="Leave a comment"
+    ></textarea>
 
-    <time title="June 9th at 08:40am" dateTime="2023-06-09 08:40:00">
-      Published 1 hour ago
-    </time>
-  </header>
-
-  <div class="{styles.content}">
-    <p>Hi everyone!</p>
-
-    <p>I have just published my new portfolio!</p>
-
-    <p>
-      <span>You can check it out at </span>
-      <span>
-        <a href="https://tatiane-leal.github.io/" target="_blank">
-          tatiane-leal.github.io
-        </a>
-      </span>
-    </p>
-
-    <p>
-      <a href="#"> #newportfolio</a>
-      <a href="#"> #projects</a>
-      <a href="#"> #showcase</a>
-    </p>
-  </div>
-
-  <form class="commentForm">
-    <strong>Comment section</strong>
-
-    <textarea placeholder="Leave a comment"></textarea>
-
-    <footer>
-      <button type="submit">Publish</button>
-    </footer>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="postForm.invalid"
+    >
+      Publish
+    </button>
   </form>
 
   <div class="commentList">
-    <app-comment></app-comment>
+    <app-comment [employeeId]="employeeId"></app-comment>
   </div>
 </article>
