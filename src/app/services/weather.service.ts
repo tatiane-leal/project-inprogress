@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http'; // Import the HttpClient modu
 import { Observable, map } from 'rxjs';
 import { WeatherApiResponse, WeatherInfo } from '../models/weather.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WeatherService {
   constructor(private _http: HttpClient) {}
 
