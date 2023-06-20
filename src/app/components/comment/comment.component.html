@@ -1,23 +1,20 @@
-<div class="comment">
-  <app-avatar></app-avatar>
+<div *ngFor="let comment of comments" class="comment">
+  <app-avatar [avatarUrl]="comment.photo"></app-avatar>
 
   <div class="commentBox">
     <div class="commentContent">
       <header>
         <div class="authorAndTime">
-          <strong>Tatiane Sala</strong>
+          <strong>{{ comment.username }}</strong>
 
-          <time title="June 9th at 08:40am" dateTime="2023-06-09 08:40:00">
-            Published around 1 hour ago
-          </time>
+          <span>
+            {{ comment.createdAt | date }}
+          </span>
         </div>
 
         <button title="Delete comment"></button>
       </header>
-      <p>That's great! Congratulations!</p>
+      <p>{{ comment.message }}</p>
     </div>
-    <footer>
-      <button>Cheer up <span> 20</span></button>
-    </footer>
   </div>
 </div>
