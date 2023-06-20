@@ -1,0 +1,47 @@
+@import "./../../../styles.scss";
+
+.card-container {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.example-card {
+  flex-basis: calc(100% / 6 - 1rem);
+  max-width: calc(100% / 6 - 1rem);
+  height: auto;
+  box-sizing: border-box;
+  background-color: #e9f4f7;
+  border: 1px solid #cfd9db;
+  border-radius: 8px;
+  margin-top: 3rem 0;
+}
+
+.example-card img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.example-card p {
+  font-size: 14px;
+}
+
+.example-card {
+  max-width: 300px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}

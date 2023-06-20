@@ -1,0 +1,19 @@
+<div class="card-container">
+  <mat-card *ngFor="let employee of employees" class="example-card">
+    <img
+      mat-card-image
+      [src]="employee.photo || './../../../assets/images/logo.svg'"
+      alt="Photo of a Shiba Inu"
+    />
+
+    <mat-card-content>
+      <p>{{ employee.name }}</p>
+      <strong> {{ employee.birthDay | date }}</strong>
+    </mat-card-content>
+    <mat-card-actions class="button-container">
+      <button mat-raised-button color="primary" (click)="addMessage(employee)">
+        Add message
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
