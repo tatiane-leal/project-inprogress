@@ -15,7 +15,6 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this._weatherService.fetchWeatherApi().subscribe((data) => {
-      console.log('Data', data);
       this.weather = data;
       this.weatherIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     });
