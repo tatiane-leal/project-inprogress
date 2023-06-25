@@ -11,9 +11,12 @@ export class PostComponent implements OnInit {
   @Input() employeeId!: number;
 
   postForm!: FormGroup;
-  message!: string;
+  newMessage!: string;
 
-  constructor(private _fb: FormBuilder) {}
+  constructor(
+    private _fb: FormBuilder,
+    private _commentService: CommentService
+  ) {}
 
   ngOnInit(): void {
     this.postForm = this._fb.group({
@@ -22,7 +25,9 @@ export class PostComponent implements OnInit {
   }
 
   onSubmit() {
-    const message = this.postForm.value.message;
-    console.log('onSubmit>', message);
+    this.newMessage = this.postForm.value.message;
+    this._commentService.commentSubject$.next(this.newMessage);
+
+    this.postForm.reset();
   }
 }

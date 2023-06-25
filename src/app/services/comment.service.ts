@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Comment } from '../models/comment.interface';
+import { format } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentService {
-  commentSubject$ = new BehaviorSubject<Comment[]>([]);
+  commentSubject$ = new BehaviorSubject<string>('');
 
   constructor(private _http: HttpClient) {}
 
@@ -33,19 +35,25 @@ export class CommentService {
   ): Observable<Comment> {
     let url = 'http://localhost:3000/comments';
 
-    let params = {
-      id: 1,
-      message: message,
-      username: 'Your team mate',
-      birthdayPersonId: birthdayPersonId,
-      createdAt: '2022-06-16',
-      photo: '',
-    };
+    const currentDate = new Date();
+    const formattedDate = format(currentDate, 'yyyy-MM-dd', { locale: enUS });
 
-    return this._http.get<Comment>(url, { params }).pipe(
-      map((data) => {
-        return data;
+    const names = ['Luke Lopes', 'Matthew Smith', 'Janet Smith', 'Mary Lopes'];
+    const randomIndex = Math.floor(Math.random() * names.length);
+    const randomName = names[randomIndex];
+
+    return this._http
+      .post<Comment>(url, {
+        message: message,
+        username: randomName,
+        birthdayPersonId: birthdayPersonId,
+        createdAt: formattedDate,
+        photo: '',
       })
-    );
+      .pipe(
+        map((data) => {
+          return data;
+        })
+      );
   }
 }

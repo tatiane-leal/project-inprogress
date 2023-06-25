@@ -1,4 +1,4 @@
-<ng-container *ngIf="comments.length > 0; else noComments">
+<ng-container>
   <div *ngFor="let comment of comments" class="comment">
     <app-avatar [avatarUrl]="comment.photo"></app-avatar>
 
