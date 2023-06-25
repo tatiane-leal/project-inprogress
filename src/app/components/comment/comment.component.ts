@@ -29,11 +29,9 @@ export class CommentComponent implements OnInit {
         filter((newMessage) => !!newMessage)
       )
       .subscribe((newMessage) => {
-        console.log('did a new msg got emmitted?', newMessage);
         this._commentService
           .createComment(newMessage, this.employeeId)
           .subscribe((createdComment) => {
-            console.log('createdComment is:::::', createdComment);
             this.comments = [...this.comments, createdComment];
           });
       });
