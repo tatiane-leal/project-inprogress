@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.interface';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -14,7 +14,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     private _employeeService: EmployeeService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -23,5 +24,9 @@ export class UserComponent implements OnInit {
     this._employeeService.getEmployeeById(this.employeeId).subscribe((data) => {
       this.employee = data[0];
     });
+  }
+
+  goHome(): void {
+    this._router.navigate(['/']);
   }
 }
