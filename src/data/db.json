@@ -106,7 +106,7 @@
       "id": 3,
       "message": "April May",
       "username": "Thats a new Lopes",
-      "birthdayPersonId": 1,
+      "birthdayPersonId": 2,
       "createdAt": "2022-06-18",
       "photo": "https://picsum.photos/80/80"
     },
@@ -121,7 +121,7 @@
     {
       "message": "bbbbb",
       "username": "Your team mate",
-      "birthdayPersonId": 1,
+      "birthdayPersonId": 3,
       "createdAt": "2022-06-16",
       "photo": "",
       "id": 5
@@ -137,7 +137,7 @@
     {
       "message": "another message",
       "username": "Mary Lopes",
-      "birthdayPersonId": 1,
+      "birthdayPersonId": 4,
       "createdAt": "2023-06-24",
       "photo": "",
       "id": 7
